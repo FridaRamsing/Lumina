@@ -52,3 +52,25 @@ font-size: 1.5rem;}
 body {
   margin-top: 40px; /* Samme som nav-højde */
 }
+
+
+
+
+/* Style for header */
+.main-header {
+  width: 100vw; /* Fylder hele vinduets bredde */
+  min-height: 500px; /* Justér højden efter behov */
+  background: url('../Images/Lumina Hero Img.png') no-repeat center center/cover;
+  background-size: cover; /* Ændret fra cover til contain */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.header-content {
+  background: rgba(0,0,0,0.5);
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+}
