@@ -117,11 +117,11 @@ padding: 64px 0;
   flex-direction: row; /*lægger boksene vandret */
   justify-content: center; /*Centrere boksene på siden*/
   align-items: flex-start;
-  gap: 32px;
-  margin: 64px auto;
+  gap: 64px;
+  margin: 150px auto;
   max-width: 1200px; /* Maksimal bredde for kolonnen */
   width: 100%;
-  padding: 0 24px; /* Lidt padding til venstre og højre */
+  padding: 0 48px; /* Lidt padding til venstre og højre */
 }
 
 .info-box {
@@ -147,4 +147,157 @@ padding: 64px 0;
   margin-right: 12px;
   object-fit: contain;
  
+}
+
+/* Style for produkt felter */
+
+.products {
+  margin: 100px auto;
+  text-align: center;
+}
+
+.products-title {
+  font-size: 1em;
+  margin-bottom: 48px;
+  color: #8D664F;
+}
+
+.products-row {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #F0EAE2;
+  flex: 1 1 0;
+  min-width: 0; /* Sikrer at kortene kan skaleres ned */
+  max-width: 100%; /* Maksimal bredde for kortene */
+  border-radius: 10px;
+  padding: 32px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product-card p {
+  color: #8D664F;
+  font-weight: 300; /* Tyndere end normal */
+  font-size: small;
+}
+
+
+
+/* featured produkter sektion */
+.featured-products {
+  margin: 100px auto;
+  text-align: center;
+}
+
+-featured-title {
+  font-size: 2em;
+  color: #8D664F
+}
+
+.featured-subtitle {
+  font-size: 1.2em;
+  color: #8D664F;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.featured-row {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featured-card {
+  background: #F0EAE2;
+  flex: 1 1 0;
+  min-width: 0; /* Sikrer at kortene kan skaleres ned */
+  max-width: 100%; /* Maksimal bredde for kortene */
+  border-radius: 10px;
+  padding: 40px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+box-sizing: border-box;
+}
+
+
+.featured-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.featured-card p {
+  color: #8D664F;
+  font-weight: 300; /* Tyndere end normal */
+  font-size: small;
+}
+
+
+
+/* Style for Instagram sektion */
+.instagram-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0; /* Ingen mellemrum mellem billederne */
+  margin: 80px auto;
+  max-width: 1200px; /* Maksimal bredde for kolonnen */
+}
+
+.row-instagram {
+  width: 25%; /* Hvert billede tager 25% af bredden */
+  height: auto;
+  object-fit: cover; /* Billederne dækker deres container */
+  border-radius: 10px;
+  display: block;
+}
+
+
+
+/* Style for footer */
+.footer {
+  background: #F0EAE2;
+  color: #8D664F;
+  padding: 48px 24 px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  gap: 32px;
+}
+
+.footer-section {
+  flex: 1 1 180px;
+  min-height: 180px;
+  margin-right: 16px;
+}
+
+.footer-logo {
+  height: 36px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.site-footer p {
+  margin: 0 0 8px 0;
+  font-weight: 300;
 }
