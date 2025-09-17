@@ -13,8 +13,9 @@
 body {
   /* Skrifttype og stÃ¸rrelse */
 font-family: Verdana, Geneva, Tahoma, sans-serif;
-font-size: 1.5rem;}
-
+font-size: 1.5rem;
+background-color: #F0EAE2;
+}
 /* Define variables in the :root */
  
 
@@ -29,7 +30,7 @@ font-size: 1.5rem;}
 
 .top-nav {
   width: 100%;
-  background-color: black;
+  background-color: #8D664F;
   height: 40px;
   position: fixed;
   top: 0;
@@ -53,15 +54,49 @@ body {
   margin-top: 40px; /* Samme som nav-højde */
 }
 
+/* Style for main menu */
+/*main menu: gennemsigtig og overpå hero*/
 
+.main-menu {
+  position: absolute;
+top: 40px; /*lige under top-nav */
+left: 0;
+width: 100%;
+background: rgba(0, 0, 0, 0.5); /* Gennemsigtig sort baggrund */
+z-index: 1100;
+display: flex;
+justify-content: center;
+padding: 64px 0;
+}
 
+.main-menu ul {
+  display: flex;
+  gap: 96px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu li a {
+  color:#fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 32px 48px;
+  border-radius: 16px;
+  transition: background 0.2s;
+
+}
+
+.main-menu li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 
 /* Style for header */
 .main-header {
-  width: 100vw; /* Fylder hele vinduets bredde */
-  min-height: 500px; /* Justér højden efter behov */
+  width: 100%;
+  min-height: 800px;
   background: url('../Images/Lumina Hero Img.png') no-repeat center center/cover;
-  background-size: cover; /* Ændret fra cover til contain */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,4 +108,43 @@ body {
   border-radius: 16px;
   text-align: center;
   color: #fff;
+}
+
+/* Style for info column */
+.info-column {
+  background: #F0EAE2;
+  display: flex;
+  flex-direction: row; /*lægger boksene vandret */
+  justify-content: center; /*Centrere boksene på siden*/
+  align-items: flex-start;
+  gap: 32px;
+  margin: 64px auto;
+  max-width: 1200px; /* Maksimal bredde for kolonnen */
+  width: 100%;
+  padding: 0 24px; /* Lidt padding til venstre og højre */
+}
+
+.info-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: none;
+  color: #8D664F;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 1.2rem;
+  width: auto;
+  max-width: none;
+  text-align: left;
+}
+
+/* style for ikonerne i info column */
+.info-icon {
+  height: 55px !important;
+  width: 55px !important;
+  vertical-align: middle;
+  margin-right: 12px;
+  object-fit: contain;
+ 
 }
