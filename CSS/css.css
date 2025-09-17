@@ -273,31 +273,59 @@ box-sizing: border-box;
 
 
 /* Style for footer */
-.footer {
+.site-footer {
   background: #F0EAE2;
   color: #8D664F;
-  padding: 48px 24 px 32px 24px;
+  padding: 24px 8px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;
-  font-size: 1rem;
-  gap: 32px;
+  font-size: 0.85rem; /* Rettet typo */
+  gap: 18px;
 }
 
 .footer-section {
-  flex: 1 1 180px;
-  min-height: 180px;
-  margin-right: 16px;
+  flex: 1 1 100px;
+  min-height: 80px;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.footer-logo-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 }
 
 .footer-logo {
-  height: 36px;
-  margin-bottom: 12px;
+  height: 39px;
+  margin-bottom: 0;
+  display: block; /* Kun block */
+}
+
+.footer-logo-small {
+  height: 30px;
   display: block;
 }
 
 .site-footer p {
-  margin: 0 0 8px 0;
+  margin: 0;
   font-weight: 300;
+  font-size: 0.85rem;
+}
+
+.footer-logo-main {
+  height: 40px;
+  max-width: 90px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 3px;
+  display: block;
+  margin-left: 0;   /* Flytter logoet til højre */
+  margin-right: auto;
 }
