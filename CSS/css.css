@@ -9,10 +9,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+.cutive-mono-regular {
+  font-family: "Cutive Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 body {
-  /* Skrifttype og stÃ¸rrelse */
-font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* Skrifttype og størrelse */
+font-family: "Cutive Mono", monospace;
 font-size: 1.5rem;
 background-color: #F0EAE2;
 }
@@ -37,10 +43,10 @@ background-color: #F0EAE2;
   left: 0;
   z-index: 1000;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Venstre og højre side */
   align-items: center;
-  gap: 100px; /* Mindre mellemrum mellem elementer */
-
+  padding: 0 32px; /* Luft til kanterne */
+  gap: 0; /* Fjern stort hul */
 }
 
 .nav-left, .nav-right {
@@ -49,6 +55,18 @@ background-color: #F0EAE2;
   color: #fff;
   padding: 0 8px; /* Mindre padding */
 }
+
+.topnav-logo {
+  height: 20px;
+  max-height: 20px;
+  width: auto;
+  max-width: 40px;
+  vertical-align: middle;
+  margin-right: 8px;
+  display: inline-block;
+  overflow: hidden;
+}
+
 
 body {
   margin-top: 40px; /* Samme som nav-højde */
@@ -62,7 +80,7 @@ body {
 top: 40px; /*lige under top-nav */
 left: 0;
 width: 100%;
-background: rgba(0, 0, 0, 0.5); /* Gennemsigtig sort baggrund */
+background: #F0EAE280; /* Gennemsigtig sort baggrund */
 z-index: 1100;
 display: flex;
 justify-content: center;
