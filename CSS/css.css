@@ -16,6 +16,8 @@
 }
 
 
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Libertinus+Keyboard&display=swap');
+
 body {
   /* Skrifttype og størrelse */
 font-family: "Cutive Mono", monospace;
@@ -121,13 +123,35 @@ padding: 64px 0;
   position: relative;
 }
 .header-content {
-  background: rgba(0,0,0,0.5);
+  background: none;
   padding: 32px;
   border-radius: 16px;
   text-align: center;
   color: #fff;
 }
 
+/* style for header knapper */
+.shop-now-button {
+  position: absolute;
+  left: 100px;
+  bottom: 100px;
+  background: rgba(141, 102, 79, 0.2); /* Gennemsigtig brun */
+  color: #E4C6A0;
+  padding: 48px 62px;
+  border-radius: 48px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+  z-index: 2;
+  border: 2px solid #E4C6A0; /* evt. kant for synlighed */
+}
+
+.shop-now-button:hover {
+  background: rgb(240, 234, 226); /* Lidt mindre gennemsigtig ved hover */
+  color: #fff;
+}
 /* Style for info column */
 .info-column {
   background: #F0EAE2;
@@ -347,3 +371,4 @@ box-sizing: border-box;
   margin-left: 0;   /* Flytter logoet til højre */
   margin-right: auto;
 }
+
