@@ -6,7 +6,7 @@
     "image": "Images/Lumina grøn højtaler til site.png",
     "genre": "Speaker",
     "playtime": "Up to 18 hours",
-    "language": "English",
+    "Price": "1999 DKK",
     "Weight": "4,5 kg",
     "Volume": "Up to 100 dB",
     "available": "In stock"
@@ -18,7 +18,7 @@
     "image": "Images/Lumina rød højtaler til site.png",
     "genre": "Speaker",
     "playtime": "Up to 30 hours",
-    "language": "English",
+    "Price": "1999 DKK",
     "Weight": "4,5 kg",
     "Volume": "Up to 100 dB",
     "available": "In stock"
@@ -30,7 +30,7 @@
     "image": "Images/Lumina lilla højtaler til site.png",
     "genre": "Speaker",
     "playtime": "Up to 30 hours",
-    "language": "English",
+    "Price": "1999 DKK",
     "Weight": "4,5 kg",
     "Volume": "Up to 100 dB",
     "available": "In stock"
@@ -42,7 +42,7 @@
     "image": "Images/Lumina hvid højtaler til site.png",
     "genre": "Speaker",
     "playtime": "Up to 30 hours",
-    "language": "English",
+    "Price": "1999 DKK",
     "Weight": "4,5 kg",
     "Volume": "Up to 100 dB",
     "available": "In stock"
@@ -55,7 +55,7 @@
     "image": "Images/Lumina hvid højtaler til site.png",
     "genre": "Speaker Cover",
     "Restitance": "Scratch and water resistant",
-    "language": "English",
+    "Price": "299 DKK",
     "Weight": "0, 5 kg",
     "available": "In stock"
   },
@@ -66,7 +66,7 @@
     "image": "Images/Lumina rød højtaler til site.png",
     "genre": "Speaker Cover",
     "Restitance": "Scratch and water resistant",
-    "language": "English",
+    "Price": "299 DKK",
     "Weight": "0, 5 kg",
     "available": "In stock"
   },
@@ -77,7 +77,7 @@
      "image": "Images/Lumina grøn højtaler til site.png",
      "genre": "Speaker Cover",
      "Restitance": "Scratch and water resistant",
-     "language": "English",
+     "Price": "299 DKK",
      "Weight": "0, 5 kg",
      "available": "In stock"
       },
@@ -88,7 +88,7 @@
      "image": "Images/Lumina lilla højtaler til site.png",
      "genre": "Speaker Cover",
      "Restitance": "Scratch and water resistant",
-     "language": "English",
+     "Price": "299 DKK",
      "Weight": "0, 5 kg",
      "available": "Out of stock"
       },
@@ -100,7 +100,7 @@
     "image": "Images/Lumina totebag.png",
     "genre": "Accessory",
     "Restitance": "Scratch and shock resistant",
-    "language": "English",
+    "Price": "199 DKK",
     "Weight": " 1 kg",
     "available": "In stock"
   }
