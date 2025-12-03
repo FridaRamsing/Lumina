@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "title": "Sage Green",
+    "description": "Our Popular speaker in a beautiful sage green color.",
+    "image": "Images/Lumina grøn højtaler til site.png",
+    "genre": "Speaker",
+    "playtime": "Up to 18 hours",
+    "language": "English",
+    "Weight": "4,5 kg",
+    "Volume": "Up to 100 dB",
+    "available": "In stock"
+  },
+  {
+    "id": 2,
+    "title": "Dusty Rose",
+    "description": "Our Popular speaker in a beautiful dusty rose color.",
+    "image": "Images/Lumina rød højtaler til site.png",
+    "genre": "Speaker",
+    "playtime": "Up to 30 hours",
+    "language": "English",
+    "Weight": "4,5 kg",
+    "Volume": "Up to 100 dB",
+    "available": "In stock"
+  },
+    {
+    "id": 3,
+    "title": "Lavender Mist",
+    "description": "Our Popular speaker in a beautiful lavender mist color.",
+    "image": "Images/Lumina lilla højtaler til site.png",
+    "genre": "Speaker",
+    "playtime": "Up to 30 hours",
+    "language": "English",
+    "Weight": "4,5 kg",
+    "Volume": "Up to 100 dB",
+    "available": "In stock"
+  },
+    {
+    "id": 4,
+    "title": "Moonlight White",
+    "description": "Our Popular speaker in a beautiful moonlight white color.",
+    "image": "Images/Lumina hvid højtaler til site.png",
+    "genre": "Speaker",
+    "playtime": "Up to 30 hours",
+    "language": "English",
+    "Weight": "4,5 kg",
+    "Volume": "Up to 100 dB",
+    "available": "In stock"
+  },
+
+    {
+    "id": 5,
+    "title": "Speaker Cover - Moonlight White",
+    "description": "Our Popular speaker cover in a beautiful moonlight white color. To protect your speaker and give it a fresh look.",
+    "image": "Images/Lumina hvid højtaler til site.png",
+    "genre": "Speaker Cover",
+    "Restitance": "Scratch and water resistant",
+    "language": "English",
+    "Weight": "0, 5 kg",
+    "available": "In stock"
+  },
+     {
+    "id": 6,
+    "title": "Speaker Cover - Dusty Rose",
+    "description": "Our Popular speaker cover in a beautiful dusty rose color. To protect your speaker and give it a fresh look.",
+    "image": "Images/Lumina rød højtaler til site.png",
+    "genre": "Speaker Cover",
+    "Restitance": "Scratch and water resistant",
+    "language": "English",
+    "Weight": "0, 5 kg",
+    "available": "In stock"
+  },
+         {
+     "id": 7,
+     "title": "Speaker Cover - Sage Green",
+     "description": "Our Popular speaker cover in a beautiful sage green color. To protect your speaker and give it a fresh look.",
+     "image": "Images/Lumina grøn højtaler til site.png",
+     "genre": "Speaker Cover",
+     "Restitance": "Scratch and water resistant",
+     "language": "English",
+     "Weight": "0, 5 kg",
+     "available": "In stock"
+      },
+            {
+     "id": 8,
+     "title": "Speaker Cover - Lavender Mist",
+     "description": "Our Popular speaker cover in a beautiful lavender mist color. To protect your speaker and give it a fresh look.",
+     "image": "Images/Lumina lilla højtaler til site.png",
+     "genre": "Speaker Cover",
+     "Restitance": "Scratch and water resistant",
+     "language": "English",
+     "Weight": "0, 5 kg",
+     "available": "Out of stock"
+      },
+       
+       {
+    "id": 9,
+    "title": "Totebag - Off White",
+    "description": "Our Popular tote bag in a beautiful off white color. To protect your speaker while you bring it everywhere",
+    "image": "Images/Lumina totebag.png",
+    "genre": "Accessory",
+    "Restitance": "Scratch and shock resistant",
+    "language": "English",
+    "Weight": " 1 kg",
+    "available": "In stock"
+  }
+]
