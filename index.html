@@ -10,17 +10,18 @@
 
 <body>
   <!-- navigation bar -->
-<nav class="top-nav">
-  <span class="nav-left">
-    <img src="Images/Hvid person ikon.png" alt="Person ikon" class="topnav-logo">
-    +100.000 people use Lumina
-  </span>
-  <span class="nav-right">
-    <img src="Images/hvis forsendelse ikon.png" alt="Forsendelse ikon" class="topnav-logo">
-    Fast delivery
-  </span>
-</nav>
+  <nav class="top-nav">
+    <span class="nav-left">
+      <img src="Images/Hvid person ikon.png" alt="Person ikon" class="topnav-logo">
+      +100.000 people use Lumina
+    </span>
+    <span class="nav-right">
+      <img src="Images/hvis forsendelse ikon.png" alt="Forsendelse ikon" class="topnav-logo">
+      Fast delivery
+    </span>
+  </nav>
 
+  <!-- main menu -->
   <nav class="main-menu">
     <ul>
       <li><a href="#menu">Menu</a></li>
@@ -29,112 +30,116 @@
     </ul>
   </nav>
 
-
-
-<!-- Header med billede -->
+  <!-- Header med billede -->
   <header class="main-header">
-    <!-- Her kan du tilføje evt. header-indhold -->
-     <header class="header-content">
+    <div class="header-content">
       <a href="https://multimusen.dk/" class="shop-now-button">Del Musikken!</a>
-     </header>
+    </div>
   </header>
-
 
   <!-- Ny sektion under headeren -->
   <section class="info-column">
     <div class="info-box">
       <img src="Images/Node ikon.png" alt="Ikon" class="info-icon">
-      Lumina Speakers can play up to 100 dB – 
-enough for the beach and the park. 
-Without being to much.</div>
+      Lumina Speakers can play up to 100 dB –
+      enough for the beach and the park.
+      Without being to much.
+    </div>
 
     <div class="info-box">
       <img src="Images/Vægt Ikon.png" alt="Ikon" class="info-icon">
-      Only 4.5 kg. Easy to carry around 
-and put in your Lumina totebag</div>
+      Only 4.5 kg. Easy to carry around
+      and put in your Lumina totebag
+    </div>
 
     <div class="info-box">
       <img src="Images/Batteri Ikon.png" alt="Ikon" class="info-icon">
-      Up to 18 hours of batteri life - 
-easy to charge with the build in USB cable</div>
-
+      Up to 18 hours of battery life –
+      easy to charge with the built-in USB cable
+    </div>
   </section>
-</body> 
 
-<!-- Produkt sektion-->
- 
-<section class="products">
-  <h2 class="products-title">Vores produkter</h2>
-  <div class="products-row">
-    <div class="product-card">
-      <img src="Images/Lumina grøn højtaler til site.png" alt="Produkt 1" class="product-image">
-      <p>Sage Green</p>
+  <!-- Produkt sektion (bliver fyldt med JS + JSON) -->
+  <section class="products">
+    <h2 class="products-title">Vores produkter</h2>
+    <div class="products-row">
+      <!-- JS indsætter produktkort her fra app.json -->
     </div>
-    <div class="product-card">
-      <img src="Images/Lumina rød højtaler til site.png" alt="Produkt 2" class="product-image">
-      <p>Dusty Rose</p>
+  </section>
+
+  <!-- featured produkter (stadig hardcodet) -->
+  <section class="featured-products">
+    <h2 class="featured-title">New Releases</h2>
+    <h3 class="featured-subtitle">Bags and Accessories</h3>
+    <div class="featured-row">
+      <div class="featured-card">
+        <img src="Images/Lumina totebag .png" alt="Produkt 1" class="featured-image">
+        <p>Lumina one totebag <br> 199,00 kr</p>
+      </div>
+      <div class="featured-card">
+        <img src="Images/Lumina cover.png" alt="Produkt 2" class="featured-image">
+        <p>Lumina Cover <br> 299,00 kr </p>
+      </div>
     </div>
-    <div class="product-card">
-      <img src="Images/Lumina lilla højtaler til site.png" alt="Produkt 3" class="product-image">
-      <p>Lavender Mist</p>
+  </section>
+
+  <!-- Instagram billeder sektion -->
+  <section class="instagram-row">
+    <img src="Images/Instagram img 1.png" alt="Instagram ikon" class="instagram-icon">
+    <img src="Images/Instagram img 2.png" alt="Instagram ikon" class="instagram-icon">
+    <img src="Images/Instagram img 3.png" alt="Instagram ikon" class="instagram-icon">
+    <img src="Images/Instagram img 4.png" alt="Instagram ikon" class="instagram-icon">
+  </section>
+
+  <!-- Footer sektion -->
+  <footer class="site-footer">
+    <!-- Første sektion: logoer og tekst -->
+    <div class="footer-section">
+      <img src="Images/anmendelser ikon.png" alt="Anmeldelser ikon" class="footer-logo-main">
+      <p>Lumina – 4.5/5 on Trustpilot</p>
+      <div class="footer-logo-row">
+        <img src="Images/facebook ikon.png" alt="Facebook" class="footer-logo">
+        <img src="Images/instagram ikon.png" alt="Instagram" class="footer-logo-small">
+        <img src="Images/tiktok ikon.png" alt="TikTok" class="footer-logo-small">
+      </div>
     </div>
-    <div class="product-card">
-      <img src="Images/Lumina hvid højtaler til site.png" alt="Produkt 4" class="product-image">
-      <p>Moonlight White</p>
+
+    <!-- Anden sektion: kontakt -->
+    <div class="footer-section">
+      <p>Kontakt: info@lumina.dk<br>Telefon: +45 12 34 56 78</p>
+    </div>
+
+    <!-- Tredje sektion: SoMe -->
+    <div class="footer-section">
+      <p>Følg os på Instagram<br>@lumina_speakers</p>
+    </div>
+
+    <!-- Fjerde sektion: copyright -->
+    <div class="footer-section">
+      <p>© 2025 Lumina<br>Alle rettigheder forbeholdes</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+     <!-- Produkt-detalje modal -->
+  <div class="modal" id="product-modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img id="modal-image" src="" alt="" />
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+
+      <ul class="modal-details">
+        <li><strong>Playtime:</strong> <span id="modal-playtime"></span></li>
+        <li><strong>Price:</strong> <span id="modal-price"></span></li>
+        <li><strong>Weight:</strong> <span id="modal-weight"></span></li>
+        <li><strong>Volume:</strong> <span id="modal-volume"></span></li>
+        <li><strong>Availability:</strong> <span id="modal-available"></span></li>
+      </ul>
     </div>
   </div>
-</section>
 
+  <script src="script.js" defer></script>
+</body>
+</html>
 
-<!--featured produkter-->
-<section class="featured-products">
-  <h2 class="featured-title">New Releases</h2>
-  <h3 class="featured-subtitle">Bags and Accessories</h3>
-  <div class="featured-row">
-  <div class="featured-card">
-    <img src="Images/Lumina totebag .png" alt="Produkt 1" class="featured-image">
-    <p>Lumina one totebag <br> 199,00 kr</p>
-  </div>
-  <div class="featured-card">
-    <img src="Images/Lumina cover.png" alt="Produkt 2" class="featured-image">
-    <p>Lumina Cover <br> 299,00 kr </p>
-  </div>
-</div>
-</section>
-
-
-
-<!-- Instagram billeder sektion-->
-<section class="instagram-row">
-  <img src="Images/Instagram img 1.png" alt="Instagram ikon" class="instagram-icon">
-  <img src="Images/Instagram img 2.png" alt="Instagram ikon" class="instagram-icon">
-  <img src="Images/Instagram img 3.png" alt="Instagram ikon" class="instagram-icon">
-  <img src="Images/Instagram img 4.png" alt="Instagram ikon" class="instagram-icon">
-</section>  
-
-
-<!-- Footer sektion -->
-<footer class="site-footer">
-  <!-- Første sektion: logoer og tekst -->
- <div class="footer-section">
-  <img src="Images/anmendelser ikon.png" alt="Anmeldelser ikon" class="footer-logo-main">
-  <p>Lumina – 4.5/5 on Trustpilot</p>
-  <div class="footer-logo-row">
-    <img src="Images/facebook ikon.png" alt="Facebook" class="footer-logo">
-    <img src="Images/instagram ikon.png" alt="Instagram" class="footer-logo-small">
-    <img src="Images/tiktok ikon.png" alt="TikTok" class="footer-logo-small">
-  </div>
-</div>
-  <!-- Anden sektion: kontakt -->
-  <div class="footer-section">
-    <p>Kontakt: info@lumina.dk<br>Telefon: +45 12 34 56 78</p>
-  </div>
-  <!-- Tredje sektion: SoMe -->
-  <div class="footer-section">
-    <p>Følg os på Instagram<br>@lumina_speakers</p>
-  </div>
-  <!-- Fjerde sektion: copyright -->
-  <div class="footer-section">
-    <p>© 2025 Lumina<br>Alle rettigheder forbeholdes</p>
-  </div>
-</footer>

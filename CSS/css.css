@@ -1,41 +1,31 @@
-
 /**
  * file: css/css.css
  * purpose: styling
  **/
 
-/* Remove whitespace on top of certain browsers */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 .cutive-mono-regular {
   font-family: "Cutive Mono", monospace;
   font-weight: 400;
   font-style: normal;
 }
 
-
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Libertinus+Keyboard&display=swap');
 
 body {
-  /* Skrifttype og størrelse */
-font-family: "Cutive Mono", monospace;
-font-size: 1.5rem;
-background-color: #F0EAE2;
+  font-family: "Cutive Mono", monospace;
+  font-size: 1.5rem;
+  background-color: #F0EAE2;
+  margin-top: 40px; /* plads til fixed top-nav */
 }
-/* Define variables in the :root */
- 
 
-/* Use your variables on elements along these lines */
-/*
-:root {
-  --contrast: lime;
-  --backgr: #000;
-
-  
-/* ...existing code... */
+/* top nav */
 
 .top-nav {
   width: 100%;
@@ -46,17 +36,17 @@ background-color: #F0EAE2;
   left: 0;
   z-index: 1000;
   display: flex;
-  justify-content: space-between; /* Venstre og højre side */
+  justify-content: space-between;
   align-items: center;
-  padding: 0 32px; /* Luft til kanterne */
-  gap: 0; /* Fjern stort hul */
+  padding: 0 32px;
 }
 
-.nav-left, .nav-right {
+.nav-left,
+.nav-right {
   font-weight: bold;
   font-size: 1rem;
   color: #fff;
-  padding: 0 8px; /* Mindre padding */
+  padding: 0 8px;
 }
 
 .topnav-logo {
@@ -70,24 +60,18 @@ background-color: #F0EAE2;
   overflow: hidden;
 }
 
-
-body {
-  margin-top: 40px; /* Samme som nav-højde */
-}
-
-/* Style for main menu */
-/*main menu: gennemsigtig og overpå hero*/
+/* main menu */
 
 .main-menu {
   position: absolute;
-top: 40px; /*lige under top-nav */
-left: 0;
-width: 100%;
-background: #F0EAE280; /* Gennemsigtig sort baggrund */
-z-index: 1100;
-display: flex;
-justify-content: center;
-padding: 64px 0;
+  top: 40px; /* lige under top-nav */
+  left: 0;
+  width: 100%;
+  background: #F0EAE280;
+  z-index: 1100;
+  display: flex;
+  justify-content: center;
+  padding: 64px 0;
 }
 
 .main-menu ul {
@@ -99,21 +83,21 @@ padding: 64px 0;
 }
 
 .main-menu li a {
-  color:#fff;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
   padding: 32px 48px;
   border-radius: 16px;
   transition: background 0.2s;
-
 }
 
 .main-menu li a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Style for header */
+/* header */
+
 .main-header {
   width: 100%;
   min-height: 800px;
@@ -123,6 +107,7 @@ padding: 64px 0;
   justify-content: center;
   position: relative;
 }
+
 .header-content {
   background: none;
   padding: 32px;
@@ -131,40 +116,43 @@ padding: 64px 0;
   color: #fff;
 }
 
-/* style for header knapper */
+/* header knap */
+
 .shop-now-button {
   position: absolute;
   left: 100px;
   bottom: 100px;
-  background: rgba(141, 102, 79, 0.2); /* Gennemsigtig brun */
+  background: rgba(141, 102, 79, 0.2);
   color: #E4C6A0;
   padding: 48px 62px;
   border-radius: 48px;
   font-size: 1.1rem;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   transition: background 0.2s;
   z-index: 2;
-  border: 2px solid #E4C6A0; /* evt. kant for synlighed */
+  border: 2px solid #E4C6A0;
 }
 
 .shop-now-button:hover {
-  background: rgb(240, 234, 226); /* Lidt mindre gennemsigtig ved hover */
+  background: rgb(240, 234, 226);
   color: #fff;
 }
-/* Style for info column */
+
+/* info column */
+
 .info-column {
   background: #F0EAE2;
   display: flex;
-  flex-direction: row; /*lægger boksene vandret */
-  justify-content: center; /*Centrere boksene på siden*/
+  flex-direction: row;
+  justify-content: center;
   align-items: flex-start;
   gap: 64px;
   margin: 150px auto;
-  max-width: 1200px; /* Maksimal bredde for kolonnen */
+  max-width: 1200px;
   width: 100%;
-  padding: 0 48px; /* Lidt padding til venstre og højre */
+  padding: 0 48px;
 }
 
 .info-box {
@@ -182,17 +170,15 @@ padding: 64px 0;
   text-align: left;
 }
 
-/* style for ikonerne i info column */
 .info-icon {
   height: 55px !important;
   width: 55px !important;
   vertical-align: middle;
   margin-right: 12px;
   object-fit: contain;
- 
 }
 
-/* Style for produkt felter */
+/* products */
 
 .products {
   margin: 100px auto;
@@ -217,8 +203,8 @@ padding: 64px 0;
 .product-card {
   background: #F0EAE2;
   flex: 1 1 0;
-  min-width: 0; /* Sikrer at kortene kan skaleres ned */
-  max-width: 100%; /* Maksimal bredde for kortene */
+  min-width: 0;
+  max-width: 100%;
   border-radius: 10px;
   padding: 32px;
   width: 100%;
@@ -234,21 +220,20 @@ padding: 64px 0;
 
 .product-card p {
   color: #8D664F;
-  font-weight: 300; /* Tyndere end normal */
+  font-weight: 300;
   font-size: small;
 }
 
+/* featured produkter */
 
-
-/* featured produkter sektion */
 .featured-products {
   margin: 100px auto;
   text-align: center;
 }
 
--featured-title {
+.featured-title {
   font-size: 2em;
-  color: #8D664F
+  color: #8D664F;
 }
 
 .featured-subtitle {
@@ -270,15 +255,14 @@ padding: 64px 0;
 .featured-card {
   background: #F0EAE2;
   flex: 1 1 0;
-  min-width: 0; /* Sikrer at kortene kan skaleres ned */
-  max-width: 100%; /* Maksimal bredde for kortene */
+  min-width: 0;
+  max-width: 100%;
   border-radius: 10px;
   padding: 40px;
   width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 
 .featured-image {
   width: 100%;
@@ -289,33 +273,31 @@ box-sizing: border-box;
 
 .featured-card p {
   color: #8D664F;
-  font-weight: 300; /* Tyndere end normal */
+  font-weight: 300;
   font-size: small;
 }
 
+/* Instagram sektion */
 
-
-/* Style for Instagram sektion */
 .instagram-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0; /* Ingen mellemrum mellem billederne */
+  gap: 0;
   margin: 80px auto;
-  max-width: 1200px; /* Maksimal bredde for kolonnen */
+  max-width: 1200px;
 }
 
-.row-instagram {
-  width: 25%; /* Hvert billede tager 25% af bredden */
+.instagram-icon {
+  width: 25%;
   height: auto;
-  object-fit: cover; /* Billederne dækker deres container */
+  object-fit: cover;
   border-radius: 10px;
   display: block;
 }
 
+/* footer */
 
-
-/* Style for footer */
 .site-footer {
   background: #F0EAE2;
   color: #8D664F;
@@ -324,7 +306,7 @@ box-sizing: border-box;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  font-size: 0.85rem; /* Rettet typo */
+  font-size: 0.85rem;
   gap: 18px;
 }
 
@@ -348,7 +330,7 @@ box-sizing: border-box;
 .footer-logo {
   height: 39px;
   margin-bottom: 0;
-  display: block; /* Kun block */
+  display: block;
 }
 
 .footer-logo-small {
@@ -369,6 +351,70 @@ box-sizing: border-box;
   object-fit: contain;
   margin-bottom: 3px;
   display: block;
-  margin-left: 0;   /* Flytter logoet til højre */
+  margin-left: 0;
   margin-right: auto;
+}
+
+
+/* ---------- Modal til produkt-detaljer ---------- */
+
+.modal {
+  position: fixed;
+  inset: 0; /* top, right, bottom, left = 0 */
+  background: rgba(0, 0, 0, 0.4);
+  display: none;           /* skjult som standard */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal.show {
+  display: flex;           /* vises når vi tilføjer .show i JS */
+}
+
+.modal-content {
+  background: #F0EAE2;
+  color: #8D664F;
+  padding: 32px;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  position: relative;
+  font-size: 1rem;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+#modal-title {
+  margin-bottom: 8px;
+}
+
+#modal-description {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.modal-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-details li {
+  margin-bottom: 4px;
+  font-size: 0.95rem;
 }
