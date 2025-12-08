@@ -210,7 +210,23 @@ body {
   width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  
 }
+
+/* Produktkort hover-effekt */
+.product-card {
+  background: #F0EAE2;
+  border-radius: 10px;
+  padding: 32px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-4px); /* lille løft */
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12); /* soft drop shadow */
+}
+
 
 .product-card img {
   width: 100%;
@@ -266,10 +282,12 @@ body {
 
 .featured-image {
   width: 100%;
-  height: auto;
+  height: 150px;        /* reduceret størrelse */
+  object-fit: contain;  /* viser hele billedet */
   border-radius: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
 }
+
 
 .featured-card p {
   color: #8D664F;
@@ -277,23 +295,54 @@ body {
   font-size: small;
 }
 
+.featured-card {
+  background: #F0EAE2;
+  border-radius: 12px;
+  padding: 20px;                /* mindre padding */
+  width: 220px;                 /* fast og mindre bredde */
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  cursor: pointer;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+
 /* Instagram sektion */
 
 .instagram-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0;
+  gap: 12px;                    /* mellemrum mellem billederne */
   margin: 80px auto;
   max-width: 1200px;
 }
 
 .instagram-icon {
-  width: 25%;
-  height: auto;
-  object-fit: cover;
+  width: calc(25% - 12px);      /* gør plads til gap */
+  height: 200px;                /* ens højde → flot grid */
+  object-fit: cover;            /* beskærer pænt uden at forvrænge */
   border-radius: 10px;
-  display: block;
+}
+.instagram-section {
+  text-align: center;
+  margin: 100px auto 60px;
+}
+
+.instagram-title {
+  font-size: 1.4rem;
+  color: #8D664F;
+  margin-bottom: 24px;
+  font-weight: 400;
 }
 
 /* footer */
@@ -357,64 +406,97 @@ body {
 
 
 /* ---------- Modal til produkt-detaljer ---------- */
+/* ---------- Modal kompakt container ---------- */
 
 .modal {
   position: fixed;
-  inset: 0; /* top, right, bottom, left = 0 */
-  background: rgba(0, 0, 0, 0.4);
-  display: none;           /* skjult som standard */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 2000;
+  padding: 20px;
 }
 
 .modal.show {
-  display: flex;           /* vises når vi tilføjer .show i JS */
+  display: flex;
 }
 
 .modal-content {
   background: #F0EAE2;
   color: #8D664F;
-  padding: 32px;
-  border-radius: 16px;
-  max-width: 600px;
-  width: 90%;
+  padding: 24px;
+  border-radius: 18px;
+
+  /* Gør modal lille og kompakt */
+  width: 350px;
+  max-width: 90%;
+  max-height: 70vh;       /* altid indenfor skærmen */
+  overflow: hidden;        /* ingen scroll nogensinde */
+  
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   position: relative;
-  font-size: 1rem;
 }
 
 .modal-close {
   position: absolute;
-  top: 8px;
-  right: 16px;
-  font-size: 2rem;
+  top: 6px;
+  right: 12px;
+  font-size: 1.8rem;
   cursor: pointer;
+  color: #8D664F;
 }
 
 #modal-image {
   width: 100%;
-  height: auto;
+  max-height: 180px;   /* bestemmer hvor stor billedet må være */
+  object-fit: contain; /* vis hele billedet uden at cutte */
   border-radius: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
+  background: #E9E2D9; /* diskret baggrund, så gennemsigtige PNG'er ser pæne ud */
+  padding: 6px;        /* lidt luft omkring billedet */
 }
 
+
 #modal-title {
-  margin-bottom: 8px;
+  font-size: 1.2rem;
+  margin-bottom: 2px;
 }
 
 #modal-description {
-  margin-bottom: 12px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  line-height: 1.2;
 }
 
 .modal-details {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .modal-details li {
-  margin-bottom: 4px;
-  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Modal animation */
+.modal-content {
+  transform: scale(0.96);
+  opacity: 0;
+  transition: transform 0.22s ease-out, opacity 0.22s ease-out;
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
 }

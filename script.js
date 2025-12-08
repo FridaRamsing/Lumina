@@ -1,6 +1,6 @@
-// Hent produkter fra app.json og indsæt dem i .products-row
 document.addEventListener('DOMContentLoaded', () => {
-  // --- Modal elementer ---
+
+  /* -------- Modal Setup -------- */
   const modal = document.getElementById('product-modal');
   const modalImage = document.getElementById('modal-image');
   const modalTitle = document.getElementById('modal-title');
@@ -13,78 +13,77 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.querySelector('.modal-close');
 
   function openModal(product) {
-    if (!modal) return;
-
     modalImage.src = product.image;
-    modalImage.alt = product.title;
     modalTitle.textContent = product.title;
-    modalDescription.textContent = product.description || '';
-
-    modalPlaytime.textContent = product.playtime || '–';
-    modalPrice.textContent = product.Price || '–';
-    modalWeight.textContent = product.Weight || '–';
-    modalVolume.textContent = product.Volume || '–';
-    modalAvailable.textContent = product.available || '–';
-
-    modal.classList.add('show');
+    modalDescription.textContent = product.description || "—";
+    modalPlaytime.textContent = product.playtime || "—";
+    modalPrice.textContent = product.Price || "—";
+    modalWeight.textContent = product.Weight || "—";
+    modalVolume.textContent = product.Volume || "—";
+    modalAvailable.textContent = product.available || "—";
+    modal.classList.add("show");
   }
 
   function closeModal() {
-    if (!modal) return;
-    modal.classList.remove('show');
+    modal.classList.remove("show");
   }
 
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  }
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", e => {
+    if (e.target === modal) closeModal();
+  });
 
-  // Luk når man klikker udenfor boksen
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
-  }
 
-  // --- Hent JSON og byg produktkort ---
+  /* -------- Hent JSON -------- */
   fetch('app.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Kunne ikke hente JSON: ' + response.status);
-      }
-      return response.json();
-    })
+    .then(res => res.json())
     .then(data => {
-      const productsSection = document.querySelector('.products-row');
 
-      if (!productsSection) {
-        console.error('Kunne ikke finde .products-row i DOM');
-        return;
-      }
+      const productsRow = document.querySelector('.products-row');
+      const featuredRow = document.querySelector('.featured-row');
 
-      // Ryd eksisterende indhold
-      productsSection.innerHTML = '';
+      /* -------- Vores produkter (KUN Speakers) -------- */
+      const speakers = data.filter(item => item.genre === "Speaker");
 
-      // Kun højtalerne til "Vores produkter"
-      const speakers = data.filter(item => item.genre === 'Speaker');
+      productsRow.innerHTML = "";
 
       speakers.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.classList.add('product-card');
+        const card = document.createElement('div');
+        card.classList.add('product-card');
 
-        productCard.innerHTML = `
-          <img src="${product.image}" alt="${product.title}" class="product-image">
+        card.innerHTML = `
+          <img src="${product.image}" class="product-image" alt="${product.title}">
           <p>${product.title}</p>
         `;
 
-        // Når man klikker på kortet -> åbn modal med detaljer
-        productCard.addEventListener('click', () => openModal(product));
-
-        productsSection.appendChild(productCard);
+        card.addEventListener("click", () => openModal(product));
+        productsRow.appendChild(card);
       });
+
+
+      /* -------- New Releases (KUN White Cover + Totebag) -------- */
+
+      const newReleases = data.filter(item =>
+        (item.genre === "Accessory" && item.title.includes("Totebag")) ||
+        (item.genre === "Speaker Cover" && item.title.includes("Moonlight White"))
+      );
+
+      featuredRow.innerHTML = "";
+
+      newReleases.forEach(product => {
+        const card = document.createElement('div');
+        card.classList.add('featured-card');
+
+        card.innerHTML = `
+          <img src="${product.image}" class="featured-image" alt="${product.title}">
+          <p>${product.title}<br>${product.Price}</p>
+        `;
+
+        card.addEventListener("click", () => openModal(product));
+        featuredRow.appendChild(card);
+      });
+
     })
-    .catch(error => {
-      console.error('Error fetching the JSON:', error);
-    });
+    .catch(err => console.error("JSON ERROR:", err));
+
 });
