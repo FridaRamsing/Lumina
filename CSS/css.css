@@ -25,7 +25,7 @@ body {
   margin-top: 40px; /* plads til fixed top-nav */
 }
 
-/* top nav */
+/* ---------------------- TOP NAV ---------------------- */
 
 .top-nav {
   width: 100%;
@@ -35,9 +35,11 @@ body {
   top: 0;
   left: 0;
   z-index: 1000;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 0 32px;
 }
 
@@ -46,7 +48,6 @@ body {
   font-weight: bold;
   font-size: 1rem;
   color: #fff;
-  padding: 0 8px;
 }
 
 .topnav-logo {
@@ -60,7 +61,7 @@ body {
   overflow: hidden;
 }
 
-/* main menu */
+/* ---------------------- MAIN MENU (forside default) ---------------------- */
 
 .main-menu {
   position: absolute;
@@ -96,7 +97,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* header */
+/* ---------------------- HEADER ---------------------- */
 
 .main-header {
   width: 100%;
@@ -140,7 +141,7 @@ body {
   color: #fff;
 }
 
-/* info column */
+/* ---------------------- INFO COLUMN ---------------------- */
 
 .info-column {
   background: #F0EAE2;
@@ -178,7 +179,7 @@ body {
   object-fit: contain;
 }
 
-/* products */
+/* ---------------------- PRODUCTS ---------------------- */
 
 .products {
   margin: 100px auto;
@@ -210,23 +211,15 @@ body {
   width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-  
-}
 
-/* Produktkort hover-effekt */
-.product-card {
-  background: #F0EAE2;
-  border-radius: 10px;
-  padding: 32px;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
   cursor: pointer;
 }
 
 .product-card:hover {
-  transform: translateY(-4px); /* lille løft */
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12); /* soft drop shadow */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
-
 
 .product-card img {
   width: 100%;
@@ -240,7 +233,7 @@ body {
   font-size: small;
 }
 
-/* featured produkter */
+/* ---------------------- FEATURED PRODUCTS ---------------------- */
 
 .featured-products {
   margin: 100px auto;
@@ -270,42 +263,16 @@ body {
 
 .featured-card {
   background: #F0EAE2;
-  flex: 1 1 0;
-  min-width: 0;
-  max-width: 100%;
-  border-radius: 10px;
-  padding: 40px;
-  width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
-}
-
-.featured-image {
-  width: 100%;
-  height: 150px;        /* reduceret størrelse */
-  object-fit: contain;  /* viser hele billedet */
-  border-radius: 10px;
-  margin-bottom: 4px;
-}
-
-
-.featured-card p {
-  color: #8D664F;
-  font-weight: 300;
-  font-size: small;
-}
-
-.featured-card {
-  background: #F0EAE2;
   border-radius: 12px;
-  padding: 20px;                /* mindre padding */
-  width: 220px;                 /* fast og mindre bredde */
+  padding: 20px;
+  width: 220px;
   text-align: center;
 
   display: flex;
   flex-direction: column;
   gap: 8px;
 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
   cursor: pointer;
 }
@@ -315,24 +282,22 @@ body {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
-
-/* Instagram sektion */
-
-.instagram-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;                    /* mellemrum mellem billederne */
-  margin: 80px auto;
-  max-width: 1200px;
-}
-
-.instagram-icon {
-  width: calc(25% - 12px);      /* gør plads til gap */
-  height: 200px;                /* ens højde → flot grid */
-  object-fit: cover;            /* beskærer pænt uden at forvrænge */
+.featured-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
   border-radius: 10px;
+  margin-bottom: 4px;
 }
+
+.featured-card p {
+  color: #8D664F;
+  font-weight: 300;
+  font-size: small;
+}
+
+/* ---------------------- INSTAGRAM ---------------------- */
+
 .instagram-section {
   text-align: center;
   margin: 100px auto 60px;
@@ -345,7 +310,23 @@ body {
   font-weight: 400;
 }
 
-/* footer */
+.instagram-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto 80px;
+  max-width: 1200px;
+}
+
+.instagram-icon {
+  width: calc(25% - 12px);
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ---------------------- FOOTER ---------------------- */
 
 .site-footer {
   background: #F0EAE2;
@@ -404,9 +385,7 @@ body {
   margin-right: auto;
 }
 
-
-/* ---------- Modal til produkt-detaljer ---------- */
-/* ---------- Modal kompakt container ---------- */
+/* ---------------------- MODAL ---------------------- */
 
 .modal {
   position: fixed;
@@ -429,11 +408,10 @@ body {
   padding: 24px;
   border-radius: 18px;
 
-  /* Gør modal lille og kompakt */
   width: 350px;
   max-width: 90%;
-  max-height: 70vh;       /* altid indenfor skærmen */
-  overflow: hidden;        /* ingen scroll nogensinde */
+  max-height: 70vh;
+  overflow: hidden;
   
   display: flex;
   flex-direction: column;
@@ -441,6 +419,15 @@ body {
 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   position: relative;
+
+  transform: scale(0.96);
+  opacity: 0;
+  transition: transform 0.22s ease-out, opacity 0.22s ease-out;
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .modal-close {
@@ -454,14 +441,13 @@ body {
 
 #modal-image {
   width: 100%;
-  max-height: 180px;   /* bestemmer hvor stor billedet må være */
-  object-fit: contain; /* vis hele billedet uden at cutte */
+  max-height: 180px;
+  object-fit: contain;
   border-radius: 10px;
   margin-bottom: 10px;
-  background: #E9E2D9; /* diskret baggrund, så gennemsigtige PNG'er ser pæne ud */
-  padding: 6px;        /* lidt luft omkring billedet */
+  background: #E9E2D9;
+  padding: 6px;
 }
-
 
 #modal-title {
   font-size: 1.2rem;
@@ -489,14 +475,364 @@ body {
   justify-content: space-between;
 }
 
-/* Modal animation */
-.modal-content {
-  transform: scale(0.96);
-  opacity: 0;
-  transition: transform 0.22s ease-out, opacity 0.22s ease-out;
+/* ---------------------- ALL PRODUCTS PAGE ---------------------- */
+
+.all-products {
+  margin: 140px auto 80px;
+  max-width: 1200px;
+  padding: 0 24px;
 }
 
-.modal.show .modal-content {
-  transform: scale(1);
-  opacity: 1;
+.all-products-title {
+  font-size: 1.8rem;
+  color: #8D664F;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.all-products-subtitle {
+  font-size: 1rem;
+  color: #8D664F;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.all-products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+}
+
+.all-products-card {
+  flex: 0 1 220px;
+}
+
+/* ---------------------- PRODUCTS.HTML MENU (products-page) ---------------------- */
+/* Gælder kun for <body class="products-page"> */
+
+.products-page .main-menu {
+  position: static;          /* ikke længere oven på indholdet */
+  top: auto;
+  left: auto;
+  width: 100%;
+  background: #F0EAE2;       /* ingen slør over teksten */
+  display: flex;
+  justify-content: center;
+  padding: 80px 80px 40px;   /* luft over/under knapperne */
+  margin-top: 40px;          /* ned fra top-nav */
+  margin-bottom: 20px;       /* ned til overskriften */
+}
+
+.products-page .products-menu {
+  justify-content: space-between;
+}
+
+/* Knapperne: Forside / Alle produkter */
+.products-page .menu-btn {
+  background: #8D664F;
+  color: #F0EAE2;
+  padding: 14px 42px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+
+  min-width: 220px;           /* ens bredde */
+  text-align: center;
+
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.products-page .menu-btn:hover {
+  background: #73523D;
+  transform: translateY(-3px);
+}
+/* Controls over all products (søgefelt + filtre) */
+.products-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 32px auto 40px;
+}
+
+.products-controls input,
+.products-controls select {
+  font-family: "Cutive Mono", monospace;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #C9BDAF;
+  background: #F7F2EB;
+  color: #8D664F;
+  min-width: 220px;
+}
+
+.products-controls input:focus,
+.products-controls select:focus {
+  outline: none;
+  border-color: #8D664F;
+}
+
+.no-results {
+  font-size: 1rem;
+  color: #8D664F;
+  text-align: center;
+  margin-top: 24px;
+}
+/* ---------- FILTER DESIGN ---------- */
+
+.products-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+
+  background: #EBDDCB;
+  padding: 24px 32px;
+  border-radius: 16px;
+  max-width: 900px;
+  margin: 40px auto 50px;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.filter-group select,
+.filter-group input {
+  font-family: "Cutive Mono", monospace;
+  font-size: 1rem;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  border: 1px solid #C8B7A8;
+  background: #FEF9F4;
+  color: #8D664F;
+
+  min-width: 220px;
+  transition: 0.25s ease;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  border-color: #8D664F;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(141,102,79,0.25);
+}
+
+/* Reset button */
+.reset-btn {
+  background: #8D664F;
+  color: #F0EAE2;
+
+  padding: 10px 26px;
+  border-radius: 999px;
+  border: none;
+
+  font-family: "Cutive Mono", monospace;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.reset-btn:hover {
+  background: #73523D;
+  transform: translateY(-2px);
+}
+/* ---------- Tablet / mindre skærme ---------- */
+@media (max-width: 900px) {
+  body {
+    font-size: 1.2rem;
+  }
+
+  .top-nav {
+    padding: 0 12px;
+  }
+
+  .nav-left,
+  .nav-right {
+    font-size: 0.85rem;
+  }
+
+  /* Forside-menu over hero */
+  .main-menu {
+    padding: 32px 0;
+  }
+
+  .main-menu ul {
+    gap: 32px;
+  }
+
+  .main-menu li a {
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+
+  .main-header {
+    min-height: 550px;
+  }
+
+  .shop-now-button {
+    left: 24px;
+    bottom: 40px;
+    padding: 24px 32px;
+    font-size: 0.9rem;
+  }
+
+  /* Info-bokse under hero */
+  .info-column {
+    flex-direction: column;
+    gap: 24px;
+    margin: 80px auto;
+    padding: 0 24px;
+  }
+
+  /* Produkter & featured: ligge under hinanden */
+  .products-row,
+  .featured-row {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .product-card,
+  .featured-card {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  /* Instagram – 2 i bredden */
+  .instagram-row {
+    flex-wrap: wrap;
+  }
+
+  .instagram-icon {
+    width: calc(50% - 12px);
+    height: 160px;
+  }
+
+  /* Alle produkter-side */
+  .all-products {
+    margin-top: 120px;
+    padding: 0 16px;
+  }
+
+  .all-products-grid {
+    gap: 16px;
+  }
+
+  .all-products-card {
+    flex: 0 1 45%;
+    max-width: 260px;
+  }
+
+  /* Filter-bjælke */
+  .products-controls {
+    max-width: 100%;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .filter-group select,
+  .filter-group input {
+    min-width: 160px;
+    flex: 1 1 45%;
+  }
+
+  /* Menu på products.html – knapper under hinanden på mindre skærme */
+  .products-page .main-menu {
+    padding: 40px 16px 24px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+
+  .products-page .products-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .products-page .menu-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* ---------- Mobil (meget små skærme) ---------- */
+@media (max-width: 600px) {
+  /* Topbar stacket */
+  .top-nav {
+    flex-direction: column;
+    height: auto;
+    padding: 4px 12px;
+    gap: 2px;
+  }
+
+  body {
+    margin-top: 60px; /* lidt mere plads til top-nav */
+  }
+
+  /* Forside-menu bliver mindre og ikke så høj */
+  .main-menu {
+    position: static;
+    background: #F0EAE2;
+    padding: 16px 0;
+  }
+
+  .main-menu ul {
+    gap: 16px;
+  }
+
+  .main-menu li a {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+
+  .main-header {
+    min-height: 420px;
+  }
+
+  .shop-now-button {
+    left: 16px;
+    bottom: 24px;
+    padding: 18px 22px;
+    font-size: 0.8rem;
+  }
+
+  /* Info, produkter og insta på én kolonne */
+  .info-column {
+    margin: 60px auto;
+    padding: 0 16px;
+  }
+
+  .instagram-icon {
+    width: 100%;
+    height: 180px;
+  }
+
+  /* Filter-bjælke – alt i én kolonne */
+  .products-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group select,
+  .filter-group input {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .reset-btn {
+    width: 100%;
+  }
+
+  /* Modal lidt større på mobil */
+  .modal-content {
+    width: 90%;
+    max-height: 80vh;
+  }
 }

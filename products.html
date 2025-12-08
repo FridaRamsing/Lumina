@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina – Alle produkter</title>
+  <link rel="stylesheet" href="css/css.css" />
+</head>
+
+<body class="products-page">
+  <!-- top bar -->
+  <nav class="top-nav">
+    <span class="nav-left">
+      <img src="Images/Hvid person ikon.png" alt="Person ikon" class="topnav-logo" />
+      +100.000 people use Lumina
+    </span>
+    <span class="nav-right">
+      <img src="Images/hvis forsendelse ikon.png" alt="Forsendelse ikon" class="topnav-logo" />
+      Fast delivery
+    </span>
+  </nav>
+
+  <!-- main menu til produktsiden -->
+  <nav class="main-menu products-menu">
+    <a href="index.html" class="menu-btn">Forside</a>
+    <a href="#all-products" class="menu-btn">Alle produkter</a>
+  </nav>
+
+  <!-- hovedindhold: alle produkter -->
+  <main class="all-products" id="all-products">
+    <h1 class="all-products-title">Alle produkter</h1>
+    <p class="all-products-subtitle">
+      Se hele sortimentet af Lumina speakers, covers og accessories.
+    </p>
+
+    <!-- Søgning + filtre -->
+    <div class="products-controls">
+      <div class="filter-group">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search products..."
+        />
+      </div>
+
+      <div class="filter-group">
+        <select id="genre-filter">
+          <option value="all">All categories</option>
+          <option value="Speaker">Speakers</option>
+          <option value="Speaker Cover">Covers</option>
+          <option value="Accessory">Accessories</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <select id="availability-filter">
+          <option value="all">Availability (all)</option>
+          <option value="in">In stock</option>
+          <option value="out">Out of stock</option>
+        </select>
+      </div>
+
+      <button id="reset-filters" class="reset-btn">Reset filters</button>
+    </div>
+
+    <div class="all-products-grid">
+      <!-- Fyldes fra script.js -->
+    </div>
+  </main>
+
+  <!-- Footer sektion -->
+  <footer class="site-footer">
+    <div class="footer-section">
+      <img src="Images/anmendelser ikon.png" alt="Anmeldelser ikon" class="footer-logo-main" />
+      <p>Lumina – 4.5/5 on Trustpilot</p>
+      <div class="footer-logo-row">
+        <img src="Images/facebook ikon.png" alt="Facebook" class="footer-logo" />
+        <img src="Images/instagram ikon.png" alt="Instagram" class="footer-logo-small" />
+        <img src="Images/tiktok ikon.png" alt="TikTok" class="footer-logo-small" />
+      </div>
+    </div>
+    <div class="footer-section">
+      <p>Kontakt: info@lumina.dk<br />Telefon: +45 12 34 56 78</p>
+    </div>
+    <div class="footer-section">
+      <p>Følg os på Instagram<br />@lumina_speakers</p>
+    </div>
+    <div class="footer-section">
+      <p>© 2025 Lumina<br />Alle rettigheder forbeholdes</p>
+    </div>
+  </footer>
+
+  <!-- Modal (samme som på forsiden) -->
+  <div class="modal" id="product-modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img id="modal-image" src="" alt="" />
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+
+      <ul class="modal-details">
+        <li><strong>Playtime:</strong> <span id="modal-playtime"></span></li>
+        <li><strong>Price:</strong> <span id="modal-price"></span></li>
+        <li><strong>Weight:</strong> <span id="modal-weight"></span></li>
+        <li><strong>Volume:</strong> <span id="modal-volume"></span></li>
+        <li><strong>Availability:</strong> <span id="modal-available"></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
