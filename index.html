@@ -8,7 +8,11 @@
 </head>
 
 <body>
-  <!-- navigation bar -->
+  <!-- =========================================================
+       TOP BAR
+       Small fixed bar at the very top showing social proof +
+       delivery info. Shared across pages.
+  ========================================================== -->
   <nav class="top-nav">
     <span class="nav-left">
       <img src="Images/Hvid person ikon.png" alt="Person ikon" class="topnav-logo" />
@@ -20,7 +24,11 @@
     </span>
   </nav>
 
-  <!-- main menu (forside) -->
+  <!-- =========================================================
+       MAIN MENU (FRONT PAGE)
+       Transparent navigation sitting on top of the hero image.
+       Currently links to internal sections (anchor links).
+  ========================================================== -->
   <nav class="main-menu">
     <ul>
       <li><a href="#menu">Menu</a></li>
@@ -29,14 +37,23 @@
     </ul>
   </nav>
 
-  <!-- Header med billede -->
+  <!-- =========================================================
+       HERO / HEADER
+       Large hero image + primary call-to-action button that
+       sends the user to the product overview page.
+  ========================================================== -->
   <header class="main-header">
     <div class="header-content">
+      <!-- Button that navigates to the full products page -->
       <a href="products.html" class="shop-now-button">Del Musikken!</a>
     </div>
   </header>
 
-  <!-- Info sektion -->
+  <!-- =========================================================
+       INFO SECTION
+       Three info boxes summarizing key product benefits with
+       icons and short explanatory text.
+  ========================================================== -->
   <section class="info-column">
     <div class="info-box">
       <img src="Images/Node ikon.png" alt="Ikon" class="info-icon" />
@@ -54,24 +71,38 @@
     </div>
   </section>
 
-  <!-- Produkt sektion -->
+  <!-- =========================================================
+       PRODUCT SECTION (FRONT PAGE)
+       "Vores produkter" shows the main speakers.
+       Cards are injected dynamically from app.json by script.js.
+       Only items where genre === "Speaker" are shown here.
+  ========================================================== -->
   <section class="products">
     <h2 class="products-title">Vores produkter</h2>
     <div class="products-row">
-      <!-- Fyldes dynamisk fra app.json af script.js (kun Speakers) -->
+      <!-- Filled dynamically from app.json via script.js (Speakers only) -->
     </div>
   </section>
 
-  <!-- Featured produkter -->
+  <!-- =========================================================
+       FEATURED PRODUCTS
+       "New Releases" highlights a totebag and a cover.
+       These cards are also generated from app.json in script.js
+       using specific filter rules (Accessory + Totebag, White Cover).
+  ========================================================== -->
   <section class="featured-products">
     <h2 class="featured-title">New Releases</h2>
     <h3 class="featured-subtitle">Bags and Accessories</h3>
     <div class="featured-row">
-      <!-- Fyldes dynamisk fra app.json af script.js (Cover + Totebag) -->
+      <!-- Filled dynamically from app.json via script.js (Cover + Totebag) -->
     </div>
   </section>
 
-  <!-- Instagram billeder sektion -->
+  <!-- =========================================================
+       INSTAGRAM SECTION
+       Static gallery that showcases how customers use Lumina.
+       Layout and spacing are handled in css.css.
+  ========================================================== -->
   <section class="instagram-section">
     <h2 class="instagram-title">Se hvordan vores kunder bruger LUMINA</h2>
     <div class="instagram-row">
@@ -82,7 +113,10 @@
     </div>
   </section>
 
-  <!-- Footer sektion -->
+  <!-- =========================================================
+       FOOTER
+       Shared footer with reviews, contact info and social media.
+  ========================================================== -->
   <footer class="site-footer">
     <div class="footer-section">
       <img src="Images/anmendelser ikon.png" alt="Anmeldelser ikon" class="footer-logo-main" />
@@ -104,10 +138,18 @@
     </div>
   </footer>
 
-  <!-- Modal til produkt-detaljer (bruges også på forsiden) -->
+  <!-- =========================================================
+       PRODUCT DETAIL MODAL
+       Reusable modal component. The same structure is used on
+       both index.html and products.html. Data is filled from
+       script.js when a product card is clicked.
+  ========================================================== -->
   <div class="modal" id="product-modal">
     <div class="modal-content">
+      <!-- Close icon -->
       <span class="modal-close">&times;</span>
+
+      <!-- Content filled dynamically from JSON -->
       <img id="modal-image" src="" alt="" />
       <h2 id="modal-title"></h2>
       <p id="modal-description"></p>
@@ -122,6 +164,14 @@
     </div>
   </div>
 
+  <!-- =========================================================
+       SCRIPT
+       script.js:
+       - loads app.json
+       - renders products dynamically into .products-row,
+         .featured-row and .all-products-grid
+       - handles modal open/close logic and filters.
+  ========================================================== -->
   <script src="script.js" defer></script>
 </body>
 </html>

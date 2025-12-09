@@ -7,8 +7,15 @@
   <link rel="stylesheet" href="css/css.css" />
 </head>
 
+<!--
+  class="products-page" is used in CSS to style this page
+  slightly differently from the front page (menu, spacing, etc.)
+-->
 <body class="products-page">
-  <!-- top bar -->
+  <!-- ************************************************************
+       TOP BAR
+       Same top navigation as on the front page. Fixed at the top.
+  ************************************************************* -->
   <nav class="top-nav">
     <span class="nav-left">
       <img src="Images/Hvid person ikon.png" alt="Person ikon" class="topnav-logo" />
@@ -20,21 +27,46 @@
     </span>
   </nav>
 
-  <!-- main menu til produktsiden -->
+  <!-- ************************************************************
+       MAIN MENU FOR PRODUCTS PAGE
+       Two main actions:
+       - "Forside" → back to index.html
+       - "Alle produkter" → scroll down to the product grid section
+       Styled as two large buttons using .menu-btn and .products-page rules.
+  ************************************************************* -->
   <nav class="main-menu products-menu">
+    <!-- Go back to the front page -->
     <a href="index.html" class="menu-btn">Forside</a>
+    <!-- Jump down to #all-products on this page -->
     <a href="#all-products" class="menu-btn">Alle produkter</a>
   </nav>
 
-  <!-- hovedindhold: alle produkter -->
+  <!-- ************************************************************
+       MAIN CONTENT: ALL PRODUCTS
+       This page shows the full product catalog, driven by JSON:
+       - All items from app.json are loaded via fetch in script.js
+       - Filters and search are applied on top of that dataset
+  ************************************************************* -->
   <main class="all-products" id="all-products">
+    <!-- Page title -->
     <h1 class="all-products-title">Alle produkter</h1>
+
+    <!-- Short description of what the page shows -->
     <p class="all-products-subtitle">
       Se hele sortimentet af Lumina speakers, covers og accessories.
     </p>
 
-    <!-- Søgning + filtre -->
+    <!-- ********************************************************
+         FILTER + SEARCH CONTROLS
+         This block allows the user to:
+         - Search by text (title + description)
+         - Filter by category (genre)
+         - Filter by availability (in/out of stock)
+         - Reset everything back to default
+         script.js reads these values and filters the full dataset.
+    ********************************************************* -->
     <div class="products-controls">
+      <!-- Free text search -->
       <div class="filter-group">
         <input
           type="text"
@@ -43,6 +75,7 @@
         />
       </div>
 
+      <!-- Category (genre) filter -->
       <div class="filter-group">
         <select id="genre-filter">
           <option value="all">All categories</option>
@@ -52,6 +85,7 @@
         </select>
       </div>
 
+      <!-- Availability filter (in stock / out of stock) -->
       <div class="filter-group">
         <select id="availability-filter">
           <option value="all">Availability (all)</option>
@@ -60,15 +94,27 @@
         </select>
       </div>
 
+      <!-- Reset filters button: handled in script.js -->
       <button id="reset-filters" class="reset-btn">Reset filters</button>
     </div>
 
+    <!-- ********************************************************
+         PRODUCT GRID
+         This container is filled dynamically from script.js:
+         - First render: all products from app.json
+         - After filters are applied: only the filtered list
+         Each card is clickable and opens the modal with details.
+    ********************************************************* -->
     <div class="all-products-grid">
-      <!-- Fyldes fra script.js -->
+      <!-- Filled from script.js (renderAllProducts / applyFilters) -->
     </div>
   </main>
 
-  <!-- Footer sektion -->
+  <!-- ************************************************************
+       FOOTER
+       Same structure as front page footer: reviews, contact,
+       social media and copyright.
+  ************************************************************* -->
   <footer class="site-footer">
     <div class="footer-section">
       <img src="Images/anmendelser ikon.png" alt="Anmeldelser ikon" class="footer-logo-main" />
@@ -90,10 +136,19 @@
     </div>
   </footer>
 
-  <!-- Modal (samme som på forsiden) -->
+  <!-- ************************************************************
+       PRODUCT DETAIL MODAL
+       Shared modal structure used on both pages.
+       script.js:
+       - Inserts product data into the fields
+       - Adds/removes .show class to open/close the modal
+  ************************************************************* -->
   <div class="modal" id="product-modal">
     <div class="modal-content">
+      <!-- Close button -->
       <span class="modal-close">&times;</span>
+
+      <!-- Product image + text, filled dynamically from JSON -->
       <img id="modal-image" src="" alt="" />
       <h2 id="modal-title"></h2>
       <p id="modal-description"></p>
@@ -108,6 +163,12 @@
     </div>
   </div>
 
+  <!-- ************************************************************
+       SCRIPT
+       Same script as on index.html.
+       It detects which page it is on by checking which elements
+       exist (front page sections vs all-products grid).
+  ************************************************************* -->
   <script src="script.js" defer></script>
 </body>
 </html>

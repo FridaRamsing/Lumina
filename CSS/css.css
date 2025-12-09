@@ -1,32 +1,46 @@
 /**
  * file: css/css.css
- * purpose: styling
+ * purpose: styling for Lumina front page + products page
+ *
+ * This file controls:
+ * - Global reset and typography
+ * - Top navigation bar
+ * - Main menu (front page) and special products-page menu
+ * - Hero section, info boxes, product grids, featured section
+ * - Instagram gallery and footer
+ * - Modal (product detail pop-up)
+ * - All products layout + filters (search, category, availability)
+ * - Responsive behavior for tablet and mobile
  **/
 
-/* Reset */
+/* ---------------- GLOBAL RESET ---------------- */
+/* Remove default margin/padding and use border-box sizing everywhere */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Helper class, if ever used */
 .cutive-mono-regular {
   font-family: "Cutive Mono", monospace;
   font-weight: 400;
   font-style: normal;
 }
 
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Libertinus+Keyboard&display=swap');
 
+/* Base body styling */
 body {
   font-family: "Cutive Mono", monospace;
   font-size: 1.5rem;
   background-color: #F0EAE2;
-  margin-top: 40px; /* plads til fixed top-nav */
+  margin-top: 40px; /* space for the fixed top-nav */
 }
 
 /* ---------------------- TOP NAV ---------------------- */
-
+/* Thin bar at the very top, fixed position, used on all pages */
 .top-nav {
   width: 100%;
   background-color: #8D664F;
@@ -50,6 +64,7 @@ body {
   color: #fff;
 }
 
+/* Small icons in the top navigation */
 .topnav-logo {
   height: 20px;
   max-height: 20px;
@@ -62,10 +77,10 @@ body {
 }
 
 /* ---------------------- MAIN MENU (forside default) ---------------------- */
-
+/* Transparent menu floating over the hero image on the front page */
 .main-menu {
   position: absolute;
-  top: 40px; /* lige under top-nav */
+  top: 40px; /* right under top-nav */
   left: 0;
   width: 100%;
   background: #F0EAE280;
@@ -97,8 +112,8 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* ---------------------- HEADER ---------------------- */
-
+/* ---------------------- HEADER / HERO ---------------------- */
+/* Large hero with background image and call-to-action button */
 .main-header {
   width: 100%;
   min-height: 800px;
@@ -117,8 +132,7 @@ body {
   color: #fff;
 }
 
-/* header knap */
-
+/* header button (CTA) that links to products page */
 .shop-now-button {
   position: absolute;
   left: 100px;
@@ -142,7 +156,7 @@ body {
 }
 
 /* ---------------------- INFO COLUMN ---------------------- */
-
+/* Three small info boxes below hero: icons + short copy */
 .info-column {
   background: #F0EAE2;
   display: flex;
@@ -179,8 +193,8 @@ body {
   object-fit: contain;
 }
 
-/* ---------------------- PRODUCTS ---------------------- */
-
+/* ---------------------- PRODUCTS (front page) ---------------------- */
+/* "Vores produkter" section showing speakers on index.html */
 .products {
   margin: 100px auto;
   text-align: center;
@@ -201,6 +215,7 @@ body {
   margin: 0 auto;
 }
 
+/* Base card used for speakers on index + reused on products page */
 .product-card {
   background: #F0EAE2;
   flex: 1 1 0;
@@ -211,7 +226,7 @@ body {
   width: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-
+  
   transition: transform 0.18s ease, box-shadow 0.18s ease;
   cursor: pointer;
 }
@@ -234,7 +249,7 @@ body {
 }
 
 /* ---------------------- FEATURED PRODUCTS ---------------------- */
-
+/* "New Releases" section on front page (Bags and Accessories) */
 .featured-products {
   margin: 100px auto;
   text-align: center;
@@ -261,18 +276,45 @@ body {
   margin: 0 auto;
 }
 
+/* Smaller cards used for featured items (cover + totebag) */
+.featured-card {
+  background: #F0EAE2;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 100%;
+  border-radius: 10px;
+  padding: 40px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.featured-image {
+  width: 100%;
+  height: 150px;        /* reduced height so cards are smaller */
+  object-fit: contain;  /* show full image without cutting */
+  border-radius: 10px;
+  margin-bottom: 4px;
+}
+
+.featured-card p {
+  color: #8D664F;
+  font-weight: 300; /* lighter text */
+  font-size: small;
+}
+
+/* Override to make featured cards a bit more compact and animated */
 .featured-card {
   background: #F0EAE2;
   border-radius: 12px;
-  padding: 20px;
-  width: 220px;
+  padding: 20px;                /* smaller padding */
+  width: 220px;                 /* fixed, smaller width */
   text-align: center;
 
   display: flex;
   flex-direction: column;
   gap: 8px;
 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
   cursor: pointer;
 }
@@ -282,22 +324,8 @@ body {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 
-.featured-image {
-  width: 100%;
-  height: 150px;
-  object-fit: contain;
-  border-radius: 10px;
-  margin-bottom: 4px;
-}
-
-.featured-card p {
-  color: #8D664F;
-  font-weight: 300;
-  font-size: small;
-}
-
 /* ---------------------- INSTAGRAM ---------------------- */
-
+/* Instagram image gallery below main content */
 .instagram-section {
   text-align: center;
   margin: 100px auto 60px;
@@ -314,20 +342,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin: 0 auto 80px;
+  gap: 12px;                    /* space between images */
+  margin: 80px auto;
   max-width: 1200px;
 }
 
 .instagram-icon {
-  width: calc(25% - 12px);
-  height: 200px;
-  object-fit: cover;
+  width: calc(25% - 12px);      /* 4 images in a row */
+  height: 200px;                /* same height for a neat grid */
+  object-fit: cover;            /* crop without distortion */
   border-radius: 10px;
 }
 
 /* ---------------------- FOOTER ---------------------- */
-
+/* Footer with Trustpilot, contact info and social icons */
 .site-footer {
   background: #F0EAE2;
   color: #8D664F;
@@ -386,7 +414,7 @@ body {
 }
 
 /* ---------------------- MODAL ---------------------- */
-
+/* Dark overlay for product detail modal */
 .modal {
   position: fixed;
   inset: 0;
@@ -398,21 +426,24 @@ body {
   padding: 20px;
 }
 
+/* Show modal when .show is added */
 .modal.show {
   display: flex;
 }
 
+/* Modal content box styling */
 .modal-content {
   background: #F0EAE2;
   color: #8D664F;
   padding: 24px;
   border-radius: 18px;
 
+  /* Compact modal size */
   width: 350px;
   max-width: 90%;
-  max-height: 70vh;
-  overflow: hidden;
-  
+  max-height: 70vh;       /* always within viewport height */
+  overflow: hidden;        /* hide scrollbars */
+
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -420,16 +451,19 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   position: relative;
 
+  /* Animation start state */
   transform: scale(0.96);
   opacity: 0;
   transition: transform 0.22s ease-out, opacity 0.22s ease-out;
 }
 
+/* Modal animation when visible */
 .modal.show .modal-content {
   transform: scale(1);
   opacity: 1;
 }
 
+/* Close button (X) */
 .modal-close {
   position: absolute;
   top: 6px;
@@ -439,6 +473,7 @@ body {
   color: #8D664F;
 }
 
+/* Modal product image */
 #modal-image {
   width: 100%;
   max-height: 180px;
@@ -460,6 +495,7 @@ body {
   line-height: 1.2;
 }
 
+/* List of product details inside modal */
 .modal-details {
   list-style: none;
   padding: 0;
@@ -476,7 +512,7 @@ body {
 }
 
 /* ---------------------- ALL PRODUCTS PAGE ---------------------- */
-
+/* Main container for the products.html catalog */
 .all-products {
   margin: 140px auto 80px;
   max-width: 1200px;
@@ -497,6 +533,7 @@ body {
   margin-bottom: 32px;
 }
 
+/* Grid for all products cards on products.html */
 .all-products-grid {
   display: flex;
   flex-wrap: wrap;
@@ -504,31 +541,34 @@ body {
   justify-content: center;
 }
 
+/* Narrow cards in all-products grid */
 .all-products-card {
-  flex: 0 1 220px;
+  flex: 0 1 220px; /* small fixed-width cards */
 }
 
 /* ---------------------- PRODUCTS.HTML MENU (products-page) ---------------------- */
-/* Gælder kun for <body class="products-page"> */
+/* Special menu layout when <body class="products-page"> */
 
+/* Override the default main-menu behavior for products page */
 .products-page .main-menu {
-  position: static;          /* ikke længere oven på indholdet */
+  position: static;          /* no longer overlaying hero */
   top: auto;
   left: auto;
   width: 100%;
-  background: #F0EAE2;       /* ingen slør over teksten */
+  background: #F0EAE2;       /* same as page background */
   display: flex;
   justify-content: center;
-  padding: 80px 80px 40px;   /* luft over/under knapperne */
-  margin-top: 40px;          /* ned fra top-nav */
-  margin-bottom: 20px;       /* ned til overskriften */
+  padding: 80px 80px 40px;   /* spacing above and below buttons */
+  margin-top: 40px;          /* distance from top-nav */
+  margin-bottom: 20px;       /* distance to heading */
 }
 
+/* Spread the two buttons (Forside / Alle produkter) */
 .products-page .products-menu {
   justify-content: space-between;
 }
 
-/* Knapperne: Forside / Alle produkter */
+/* Button styling for "Forside" and "Alle produkter" */
 .products-page .menu-btn {
   background: #8D664F;
   color: #F0EAE2;
@@ -538,7 +578,7 @@ body {
   font-weight: 600;
   font-size: 1.2rem;
 
-  min-width: 220px;           /* ens bredde */
+  min-width: 220px;           /* same width for both */
   text-align: center;
 
   transition: background 0.25s ease, transform 0.25s ease;
@@ -548,7 +588,9 @@ body {
   background: #73523D;
   transform: translateY(-3px);
 }
-/* Controls over all products (søgefelt + filtre) */
+
+/* ---------------------- FILTER CONTROLS (products.html) ---------------------- */
+/* Wrapper around search input + dropdown filters + reset button */
 .products-controls {
   display: flex;
   flex-wrap: wrap;
@@ -558,6 +600,7 @@ body {
   margin: 32px auto 40px;
 }
 
+/* Input & select fonts and base look (first definition) */
 .products-controls input,
 .products-controls select {
   font-family: "Cutive Mono", monospace;
@@ -576,14 +619,16 @@ body {
   border-color: #8D664F;
 }
 
+/* Message for when filters return no results */
 .no-results {
   font-size: 1rem;
   color: #8D664F;
   text-align: center;
   margin-top: 24px;
 }
-/* ---------- FILTER DESIGN ---------- */
 
+/* ---------- FILTER DESIGN (enhanced styling box) ---------- */
+/* This block refines the products-controls block further with background, shadow etc. */
 .products-controls {
   display: flex;
   justify-content: center;
@@ -599,6 +644,7 @@ body {
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
+/* Style inputs/selects inside filter groups */
 .filter-group select,
 .filter-group input {
   font-family: "Cutive Mono", monospace;
@@ -622,7 +668,7 @@ body {
   box-shadow: 0 0 0 3px rgba(141,102,79,0.25);
 }
 
-/* Reset button */
+/* Reset button (enhanced version) */
 .reset-btn {
   background: #8D664F;
   color: #F0EAE2;
@@ -643,7 +689,9 @@ body {
   background: #73523D;
   transform: translateY(-2px);
 }
+
 /* ---------- Tablet / mindre skærme ---------- */
+/* Tablet breakpoint: adjust spacing and stacking */
 @media (max-width: 900px) {
   body {
     font-size: 1.2rem;
@@ -683,7 +731,7 @@ body {
     font-size: 0.9rem;
   }
 
-  /* Info-bokse under hero */
+  /* Info boxes become stacked in one column */
   .info-column {
     flex-direction: column;
     gap: 24px;
@@ -691,7 +739,7 @@ body {
     padding: 0 24px;
   }
 
-  /* Produkter & featured: ligge under hinanden */
+  /* Products & featured wrap instead of strict row */
   .products-row,
   .featured-row {
     flex-wrap: wrap;
@@ -704,7 +752,7 @@ body {
     width: 100%;
   }
 
-  /* Instagram – 2 i bredden */
+  /* Instagram – show 2 images per row */
   .instagram-row {
     flex-wrap: wrap;
   }
@@ -714,7 +762,7 @@ body {
     height: 160px;
   }
 
-  /* Alle produkter-side */
+  /* All products page spacing tweaks */
   .all-products {
     margin-top: 120px;
     padding: 0 16px;
@@ -729,7 +777,7 @@ body {
     max-width: 260px;
   }
 
-  /* Filter-bjælke */
+  /* Filter box narrower on tablet */
   .products-controls {
     max-width: 100%;
     padding: 16px;
@@ -742,7 +790,7 @@ body {
     flex: 1 1 45%;
   }
 
-  /* Menu på products.html – knapper under hinanden på mindre skærme */
+  /* Products page menu buttons stacked on smaller screens */
   .products-page .main-menu {
     padding: 40px 16px 24px;
     margin-top: 60px;
@@ -762,9 +810,9 @@ body {
   }
 }
 
-/* ---------- Mobil (meget små skærme) ---------- */
+/* ---------- Mobile (very small screens) ---------- */
 @media (max-width: 600px) {
-  /* Topbar stacket */
+  /* Stack top-nav content vertically */
   .top-nav {
     flex-direction: column;
     height: auto;
@@ -773,10 +821,10 @@ body {
   }
 
   body {
-    margin-top: 60px; /* lidt mere plads til top-nav */
+    margin-top: 60px; /* extra space for taller top-nav */
   }
 
-  /* Forside-menu bliver mindre og ikke så høj */
+  /* Main menu becomes static and smaller on mobile */
   .main-menu {
     position: static;
     background: #F0EAE2;
@@ -803,7 +851,7 @@ body {
     font-size: 0.8rem;
   }
 
-  /* Info, produkter og insta på én kolonne */
+  /* Info, products and Instagram in one column */
   .info-column {
     margin: 60px auto;
     padding: 0 16px;
@@ -814,7 +862,7 @@ body {
     height: 180px;
   }
 
-  /* Filter-bjælke – alt i én kolonne */
+  /* Filter box becomes fully vertical */
   .products-controls {
     flex-direction: column;
     align-items: stretch;
@@ -830,7 +878,7 @@ body {
     width: 100%;
   }
 
-  /* Modal lidt større på mobil */
+  /* Modal slightly larger on small screens for readability */
   .modal-content {
     width: 90%;
     max-height: 80vh;
